@@ -1,44 +1,29 @@
-/*a) Escrever, em linguagem Java, a classe Pagamento, cujos atributos únicos são
-nomeDoPagador (String), cpf (String) e valorASerPago (double). Escrever, nesta
-classe, métodos construtores, métodos de acesso e métodos modificadores para os
-atributos.*/
-
 public class Pagamento {
    private String nomeDoPagador;
    private String cpf;
-   private double valorASerPago;
-
-   public Pagamento (String ndp, String c, double vasp){
+   private double valorAserPago ;
+   
+   public Pagamento (String ndp, String cp , double vpg){
       nomeDoPagador = ndp;
-      cpf = c;
-      valorASerPago = vasp;
+      String cpf = cp;
+      double valorAserPago = vpg;
    }
-   
-   public String getNomeDoPagador(){
+   public String getNomeDopagador () {
       return nomeDoPagador;
-   }
-   
-   public String getCpf(){
+   } 
+   public String getCpf (){
       return cpf;
    }
-   
-   public double getValorASerPago(){
-      return valorASerPago;
+   public double getValorAserPago(){
+      return valorAserPago;
    }
-   
-   public void setNomeDoPagador(String ndp){
+   public void setNomeDoPagador (String ndp){
       nomeDoPagador = ndp;
    }
-   
-   public void setCpf (String c){
-      cpf = c;
+   public void setCpf (String cp){
+      cpf = cp;
    }
-   
-   public void setValorASerPago (double vasp){
-      valorASerPago = vasp;
-   }
-
-   public String toString(){
-	   return "Nome do Pagador: " + nomeDoPagador + "\nCPF: " + cpf + "\nValor a ser pago: " + valorASerPago;
+   public void setValorAserPago (double vpg){
+   valorAserPago = vpg;
    }
 }
