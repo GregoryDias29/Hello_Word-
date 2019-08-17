@@ -1,0 +1,31 @@
+import javax.swing.*;
+public class Calculo_IMC {
+	public static void main (String [] args) {
+		
+		String sNome = JOptionPane.showInputDialog("Digite seu nome: ");
+		String sIdade = JOptionPane.showInputDialog("Digite sua idade: ");
+		String sPeso = JOptionPane.showInputDialog("Digite seu Peso em quilogramas: ");
+		String sAltura = JOptionPane.showInputDialog("Digite sua altura em metros: ");
+		
+		double idade = Double.parseDouble(sIdade);
+		double peso = Double.parseDouble (sPeso);
+		double altura = Double.parseDouble(sAltura);
+		
+		double imc = peso / (altura * altura);
+		
+		if (imc >=  40 ) {
+			JOptionPane.showMessageDialog (null,"Segundo os calculos você " + sNome + " Esta com obsidae grau 3 favor consultra um medico, seu IMC é de = " + imc );
+		} else if (imc < 18.5 ) {
+			JOptionPane.showMessageDialog(null, "Segundo os calculos você " + sNome + " Esta abaixo do peso favor se alientar mais, seu IMC é de = " + imc);	
+		} else if (imc > 18.5 && imc < 24.9 ) {
+			JOptionPane.showMessageDialog(null, "Segundo o calculo você " + sNome + " Esta com o peso ideial, seu IMC é de =  " + imc);		
+		} else if (imc >= 25 && imc < 29.9) {
+			JOptionPane.showMessageDialog(null, "Segundo os calculos você " + sNome + " Esta com sobrepeso, favor se exercitar mais, seu IMC é de = " + imc );
+		} else if (imc >= 30 && imc < 34.9) {
+			JOptionPane.showMessageDialog(null, "Segundo os calculos você " + sNome + " Esta com obesidade grau 1, favor diminua na comida e exercite-se mais, seu IMC é de = " + imc );
+		} else if (imc >= 35 && imc < 39.9) {
+			JOptionPane.showMessageDialog(null, "Segundo os calculos você " + sNome + " Esta com obesidade grau 2, favor diminua na comida e exercite-se mais, seu IMC é de = " + imc );
+		} 
+	}
+
+}
