@@ -1,0 +1,93 @@
+import javax.swing.*;
+public class Calculo_IMC {
+	public static void main (String [] args) {
+		
+		
+		String sAt = JOptionPane.showInputDialog("Você deseja atendimento para Criança ou Adulto: ");
+			if (sAt.equalsIgnoreCase("Criança")) {
+				String sN = JOptionPane.showInputDialog("Digite o nome da criança: ");
+				String sS = JOptionPane.showInputDialog("A criança é Menino ou Menina ?: ");
+					if(sS.equalsIgnoreCase("Menina")) {
+						String sI = JOptionPane.showInputDialog("Digite a idade da " + sN + ":");
+						String sPes = JOptionPane.showInputDialog("Digite o peso da" + sN + ": ");
+						String sAlt = JOptionPane.showInputDialog("Digite a altura do " + sN + ": ");
+						
+						int i = Integer.parseInt(sI);
+						double pes = Double.parseDouble (sPes.replace("," , "."));//para efetuar a troca dos . por ,
+						double alt = Double.parseDouble(sAlt.replace("," , "."));
+						//double altura = Double.parseDouble(sAltura);
+						
+						double imc = pes / (alt * alt);
+					}
+				String sI = JOptionPane.showInputDialog("Digite a idade da " + sN + ":");
+				String sP = JOptionPane.showInputDialog("Digite o peso do " + sN +": ");
+				String sA = JOptionPane.showInputDialog("Digite a altura do " + sN + ": ");
+				
+				int i = Integer.parseInt(sI);
+				double p = Double.parseDouble (sP.replace("," , "."));
+				double a = Double.parseDouble(sA.replace("," , "."));
+				//double altura = Double.parseDouble(sAltura);
+				
+				double im = p / (a * a);
+				// ao utilizar o equalsIgnoreCase ele desconsidera o Case-sensitive
+				if (im >=  18 && sS.equalsIgnoreCase("Menino") && i <= 6){
+					JOptionPane.showMessageDialog (null,"Segundo os calculos o " + sN + " Esta com obsidae   favor consultra um medico, o resultado do IMC é de = " + im );
+				} else if (im < 14.5 && sS.equalsIgnoreCase("menino") && i <= 6) {
+					JOptionPane.showMessageDialog(null, "Segundo os calculos o " + sN + " Esta abaixo do peso favor aumentar a alimentação, o resultado do  IMC é de = " + im);	
+				} else if (im >= 14.5  && im < 16.6 && sS.equalsIgnoreCase("menino")&& i <= 6) {
+					JOptionPane.showMessageDialog(null, "Segundo o calculo o " + sN + " Esta com o peso ideial, o resultado do  IMC é de =  " + im);		
+				} else if (im >= 16.6 && im < 18 && sS.equalsIgnoreCase("menino")&& i <= 6) {
+					JOptionPane.showMessageDialog(null, "Segundo os calculos o " + sN + " Esta com sobrepeso, favor dosar na alimentação, o resultado do  IMC é de = " + im );
+				}System.exit(0);
+				
+		String sNome = JOptionPane.showInputDialog("Digite seu nome: ");
+		String sIdade = JOptionPane.showInputDialog("Digite sua idade: ");
+		String sSexo = JOptionPane.showInputDialog("Digite seu Sexo utilizando M para Mulher ou H para Homem: ");
+		String sPeso = JOptionPane.showInputDialog("Digite seu peso: ");
+		String sAltura = JOptionPane.showInputDialog("Digite sua altura: ");
+		
+		
+		int idade = Integer.parseInt(sIdade);
+		double peso = Double.parseDouble (sPeso.replace("," , "."));
+		double altura = Double.parseDouble(sAltura.replace("," , "."));
+		//double altura = Double.parseDouble(sAltura);
+		
+		double imc = peso / (altura * altura);
+		// TABELA IMC - ADULTO - MULHER
+			if (imc >=  40 && sSexo.equalsIgnoreCase("m")){
+				JOptionPane.showMessageDialog (null,"Segundo os calculos você " + sNome + " Esta com obsidae grau 3 favor consultra um medico, seu IMC é de = " + imc );
+			} else if (imc < 18.5 && sSexo.equalsIgnoreCase("m") ) {
+				JOptionPane.showMessageDialog(null, "Segundo os calculos você " + sNome + " Esta abaixo do peso favor se alientar mais, seu IMC é de = " + imc);	
+			} else if (imc > 18.5 && imc < 24.9 && sSexo.equalsIgnoreCase("m")) {
+				JOptionPane.showMessageDialog(null, "Segundo o calculo você " + sNome + " Esta com o peso ideial, seu IMC é de =  " + imc);		
+			} else if (imc >= 25 && imc < 29.9 && sSexo.equalsIgnoreCase("m")) {
+				JOptionPane.showMessageDialog(null, "Segundo os calculos você " + sNome + " Esta com sobrepeso, favor se exercitar mais, seu IMC é de = " + imc );
+			} else if (imc >= 30 && imc < 34.9 && sSexo.equalsIgnoreCase("m")) {
+				JOptionPane.showMessageDialog(null, "Segundo os calculos você " + sNome + " Esta com obesidade grau 1, favor diminua na comida e exercite-se mais, seu IMC é de = " + imc );
+			} else if (imc >= 35 && imc < 39.9 && sSexo.equalsIgnoreCase("m")) {
+				JOptionPane.showMessageDialog(null, "Segundo os calculos você " + sNome + " Esta com obesidade grau 2, favor diminua na comida e exercite-se mais, seu IMC é de = " + imc );
+				} 
+			// TABLE IMC - ADULTO - HOMEM 
+			if (imc >=  40 && sSexo.equalsIgnoreCase("h")){
+				JOptionPane.showMessageDialog (null,"Segundo os calculos você " + sNome + " Esta com obsidae grau 3 favor consultra um medico, seu IMC é de = " + imc );
+			} else if (imc < 18.5 && sSexo.equalsIgnoreCase("h") ) {
+				JOptionPane.showMessageDialog(null, "Segundo os calculos você " + sNome + " Esta abaixo do peso favor se alientar mais, seu IMC é de = " + imc);	
+			} else if (imc > 18.5 && imc < 24.9 && sSexo.equalsIgnoreCase("h")) {
+				JOptionPane.showMessageDialog(null, "Segundo o calculo você " + sNome + " Esta com o peso ideial, seu IMC é de =  " + imc);		
+			} else if (imc >= 25 && imc < 29.9 && sSexo.equalsIgnoreCase("h")) {
+				JOptionPane.showMessageDialog(null, "Segundo os calculos você " + sNome + " Esta com sobrepeso, favor se exercitar mais, seu IMC é de = " + imc );
+			} else if (imc >= 30 && imc < 34.9 && sSexo.equalsIgnoreCase("h")) {
+				JOptionPane.showMessageDialog(null, "Segundo os calculos você " + sNome + " Esta com obesidade grau 1, favor diminua na comida e exercite-se mais, seu IMC é de = " + imc );
+			} else if (imc >= 35 && imc < 39.9 && sSexo.equalsIgnoreCase("h")) {
+				JOptionPane.showMessageDialog(null, "Segundo os calculos você " + sNome + " Esta com obesidade grau 2, favor diminua na comida e exercite-se mais, seu IMC é de = " + imc );
+			} 
+		
+			}
+
+	}
+}
+
+
+
+
+
